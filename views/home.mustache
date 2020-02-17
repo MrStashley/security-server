@@ -8,7 +8,8 @@
  <body>
    <h1>Nothing to see here</h1>
    <script>
-      var sendData = JSON.parse({{data}});
+      var dataString = "{{data}}";
+      var sendData = JSON.parse(dataString.replace(/(&quot\;)/g,"\"");
       console.log(sendData);
    </script>
  </body>
