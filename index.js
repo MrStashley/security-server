@@ -14,7 +14,7 @@ app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'mustache');
 app.engine('mustache', require('hogan-middleware').__express);
 
-var data = [];
+var data = ["one","two", "three"];
 
 app.get("/", (req, res, next) =>{
   res.render("home", {data: data });
