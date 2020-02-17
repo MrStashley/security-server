@@ -8,13 +8,13 @@
  <body>
    <h1>Nothing to see here</h1>
    <script>
-      var locationDataFile = "/data/locationData";
-      var reader = new FileReader();
-      reader.onload = function(e){
-        var contents = e.target.result;
-        console.log(contents);
-      }
-      reader.readAsText(locationDataFile);
+      const fs = require('fs');
+
+      fs.readFile("/data/locationData.txt", (err,data) =>{
+          if (err)
+            console.log(err);
+          console.log(data);
+      })
    </script>
  </body>
 </html>
