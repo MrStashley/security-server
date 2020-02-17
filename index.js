@@ -14,10 +14,10 @@ app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'mustache');
 app.engine('mustache', require('hogan-middleware').__express);
 
-fs.writeFile('/data/locationData.txt',0, function(err){
+/*fs.writeFile('/data/locationData.txt',0, function(err){
   if(err)
     console.log(err);
-});
+});*/
 
 app.get("/", (req, res, next) =>{
   res.render("home");
