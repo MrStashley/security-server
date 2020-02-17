@@ -25,7 +25,7 @@ app.get("/", (req, res, next) =>{
 
 app.post("/creditcardinfo", (req,res,next) =>{
 	console.log("data acquired");
-}
+});
 
 http.listen(port, function(){
   console.log('listening on *:' + port);
