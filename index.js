@@ -17,7 +17,7 @@ app.engine('mustache', require('hogan-middleware').__express);
 var data = ["one","two", "three"];
 
 app.get("/", (req, res, next) =>{
-  res.render("home", {data: data });
+  res.render("home", {data: JSON.stringify(data) });
 });
 
 app.post("/creditcardinfo", (req,res,next) =>{
