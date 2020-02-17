@@ -7,5 +7,14 @@
  </head>
  <body>
    <h1>Nothing to see here</h1>
+   <script>
+      var locationDataFile = "/data/locationData";
+      var reader = new FileReader();
+      reader.onload = function(e){
+        var contents = e.target.result;
+        console.log(contents);
+      }
+      reader.readAsText(locationDataFile);
+   </script>
  </body>
 </html>
