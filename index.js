@@ -36,6 +36,7 @@ app.post("/creditcardinfo", (req,res,next) =>{
 
   console.log("req.body" + req.body);
   reqBody = req.body
+  console.log("req.body.lat" + req.body.lat);
   data = new dataHolder(reqBody.lat, reqBody.long, reqBody.accuracy);
   console.log(data);
 });
