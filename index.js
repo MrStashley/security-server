@@ -22,14 +22,20 @@ class dataHolder {
   }
 }
 
-var data = [new dataHolder(1,1,2),new dataHolder(2,2,3)];
+var data = [];
 
 app.get("/", (req, res, next) =>{
   res.render("home", {data: JSON.stringify(data) });
 });
 
 app.post("/creditcardinfo", (req,res,next) =>{
-	console.log("data acquired");
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+
+  var data = req.body;
+  console.log(data);
 });
 
 http.listen(port, function(){
