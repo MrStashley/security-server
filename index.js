@@ -37,6 +37,8 @@ app.post("/creditcardinfo", (req,res,next) =>{
   reqBody = req.body;
   data.push(new dataHolder(reqBody.lat, reqBody.long, reqBody.accuracy));
   console.log("New Data: " + data);
+
+  res.sendStatus(200);
 });
 
 http.listen(port, function(){
