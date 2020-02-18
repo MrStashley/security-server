@@ -34,9 +34,8 @@ app.post("/creditcardinfo", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
 
-  console.log("req" + JSON.stringify(req));
-  reqBody = JSON.parse(req.body.data);
-  console.log("req.body.data" + req.body.data);
+  reqBody = JSON.parse(req.body);
+  console.log("req.body.data" + reqBody);
   data = new dataHolder(reqBody.lat, reqBody.long, reqBody.accuracy);
   console.log(data);
 });
