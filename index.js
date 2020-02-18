@@ -14,7 +14,15 @@ app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'mustache');
 app.engine('mustache', require('hogan-middleware').__express);
 
-var data = [1,2,3];
+class dataHolder {
+  constructor(lat, long, accuracy){
+    this.lat = lat;
+    this.long = long;
+    this.accuracy = accuracy;
+  }
+}
+
+var data = [new dataHolder(1,1,2),new dataHolder(2,2,3)];
 
 app.get("/", (req, res, next) =>{
   res.render("home", {data: JSON.stringify(data) });
