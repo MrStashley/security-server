@@ -33,11 +33,10 @@ app.post("/creditcardinfo", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
-  
+
   reqBody = req.body;
-  console.log("req.body.data" + reqBody);
-  data = new dataHolder(reqBody.lat, reqBody.long, reqBody.accuracy);
-  console.log(data);
+  data.push(new dataHolder(reqBody.lat, reqBody.long, reqBody.accuracy));
+  console.log("New Data: " + data);
 });
 
 http.listen(port, function(){
