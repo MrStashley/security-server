@@ -30,7 +30,7 @@ app.get("/", (req, res, next) =>{
 
 app.get("/color", (req, res, next) =>{
   res.render("color");
-}
+});
 
 app.post("/creditcardinfo", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Origin', '*');
