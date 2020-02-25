@@ -6,7 +6,7 @@
    <title>Color</title>
  </head>
  <body>
-   <div style = "height: 200px; width: 50%; background-color: powderblue;"> </div>
+   <div id = "colorDiv" style = "height: 200px; width: 50%; background-color: powderblue;"> </div>
    <script>
     var urlParams = new URLSearchParams(window.location.search);
     console.log(window.location.search);
@@ -14,6 +14,8 @@
     var b = urlParams.get("b");
     var g = urlParams.get("g");
     console.log("r: " + r + " g: " + g + " b: " + b);
+    var divColor = document.getElementById("divColor");
+    divColor.style.background-color = rgb(r,g,b);
    </script>
  </body>
 </html>
