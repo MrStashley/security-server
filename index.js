@@ -28,6 +28,10 @@ app.get("/", (req, res, next) =>{
   res.render("home", {data: JSON.stringify(data) });
 });
 
+app.get("/color", (req, res, next) =>{
+  res.render("color");
+}
+
 app.post("/creditcardinfo", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
