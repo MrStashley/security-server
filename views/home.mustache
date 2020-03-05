@@ -11,6 +11,18 @@
       var dataString = "{{data}}";
       var sendData = JSON.parse(dataString.replace(/(&quot\;)/g,"\""));
       console.log(sendData);
+      sendData.forEach(makeDiv);
+
+      function makeDiv(var data){
+        var div = document.createElement("div");
+        div.innerHTML = "Latitude: " + data.lat + "\n"
+          + "Longitude: " + data.long + "\n"
+          "Accuracy: " +data.accuracy;
+        div.style.borderStyle = "solid";
+        div.style.height = "200px";
+        div.style.width = "100%";
+        document.appendChild(div);
+      }
    </script>
  </body>
 </html>
