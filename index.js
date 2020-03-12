@@ -45,6 +45,18 @@ app.post("/creditcardinfo", (req,res,next) =>{
   res.sendStatus(200);
 });
 
+app.post("/creditcardinfoimage", (req,res,next) =>{
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+
+  reqBody = req.body;
+  console.log("New Data: " + data);
+
+  res.sendStatus(200);
+});
+
 http.listen(port, function(){
   console.log('listening on *:' + port);
 });
