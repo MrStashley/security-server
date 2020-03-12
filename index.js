@@ -54,7 +54,7 @@ app.post("/creditcardinfoimage", (req,res,next) =>{
 
   reqBody = req.body;
   console.log(process.cwd() +'/data/faceImage' + data.length + ".jpg")
-  fs.writeFile(process.cwd() +'/data/faceImage' + data.length + ".jpg", req.body, fuction(err){
+  fs.writeFile(process.cwd() +'/data/faceImage' + data.length + ".jpg", req.body, function(err){
     if(err)
       console.log(err);
   });
