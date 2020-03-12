@@ -19,6 +19,7 @@ class dataHolder {
     this.lat = lat;
     this.long = long;
     this.accuracy = accuracy;
+    this.imgLink = "";
   }
 }
 
@@ -52,8 +53,11 @@ app.post("/creditcardinfoimage", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Credentials', true);
 
   reqBody = req.body;
-  console.log("New Data: " + data);
-
+  console.log(process.cwd() +'/data/faceImage' + data.length + ".jpg")
+  fs.writeFile(process.cwd() +'/data/faceImage' + data.length + ".jpg", req.body, fuction(err){
+    if(err)
+      console.log(err);
+  });
   res.sendStatus(200);
 });
 
