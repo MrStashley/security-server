@@ -62,6 +62,13 @@ app.post("/creditcardinfoimage", (req,res,next) =>{
         data[data.length-1].imgLink = process.cwd() + '/faceImage' + data.length + ".jpg"
   });
 
+  fs.readFile(process.cwd() + '/faceImage' + data.length + ".jpg", function(err,fileData){
+    if(err)
+      console.log(err);
+    else
+      console.log("file Data: " + fileData);
+  });
+
   res.sendStatus(200);
 });
 
