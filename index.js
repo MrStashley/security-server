@@ -53,7 +53,7 @@ app.post("/creditcardinfoimage", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Credentials', true);
 
   reqBody = req.body;
-  var link = __dirname + '/faceImage' + data.length + ".jpg"
+  var link = '/Images/faceImage' + data.length + ".jpg"
   console.log(link);
   fs.writeFile(link, req.body, function(err){
     if(err)
