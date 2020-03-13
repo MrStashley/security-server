@@ -68,7 +68,7 @@ app.post("/creditcardinfoimage", (req,res,next) =>{
     if(err)
       console.log( "Error: " + err);
     else
-      console.log("file Data: " + fileData);
+      console.log("file Data: " + JSON.stringify(fileData));
   });
 
   res.sendStatus(200);
