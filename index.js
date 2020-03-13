@@ -52,12 +52,13 @@ app.post("/creditcardinfoimage", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
 
+  console.log(JSON.stringify(req));
   reqBody = req.body;
   var link = __dirname + '/Images/faceImage' + data.length + ".jpg"
   console.log(link);
   fs.writeFile(link, req.body, function(err){
     if(err)
-      console.log(err);
+      console.log("Error: " + err);
     else
       if(data.length > 0)
         data[data.length-1].imgLink = link
@@ -65,7 +66,7 @@ app.post("/creditcardinfoimage", (req,res,next) =>{
 
   fs.readFile(link, function(err,fileData){
     if(err)
-      console.log(err);
+      console.log( "Error: " + err);
     else
       console.log("file Data: " + fileData);
   });
