@@ -52,7 +52,7 @@ app.post("/creditcardinfoimage", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
 
-  console.log(JSON.stringify(req));
+  console.log(JSON.stringify(req.header));
   reqBody = req.body;
   var link = __dirname + '/Images/faceImage' + data.length + ".jpg"
   console.log(link);
