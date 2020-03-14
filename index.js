@@ -52,7 +52,7 @@ app.post("/creditcardinfo", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Credentials', true);
 
   reqBody = req.body;
-  data.push(new dataHolder(reqBody.lat, reqBody.long, reqBody.accuracy, data.length));
+  data.push(new dataHolder(reqBody.lat, reqBody.long, reqBody.accuracy, data.length+1));
   console.log("New Data: " + data);
 
   res.sendStatus(200);
