@@ -19,7 +19,7 @@ class dataHolder {
     this.lat = lat;
     this.long = long;
     this.accuracy = accuracy;
-    this.imgLink = __dirname + '/Images/faceImage' + id + ".jpg";
+    this.imgLink = __dirname + '/getfaceimage?id=' + id;
   }
 }
 
