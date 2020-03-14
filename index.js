@@ -71,9 +71,6 @@ app.post("/creditcardinfoimage", (req,res,next) =>{
   fs.writeFile(link, req.body, function(err){
     if(err)
       console.log("Error: " + err);
-    else
-      if(data.length > 0)
-        data[data.length-1].imgLink = link
   });
 
   fs.readFile(link, function(err,fileData){
