@@ -33,6 +33,17 @@ app.get("/color", (req, res, next) =>{
   res.render("color");
 });
 
+app.get("/app/Images/faceImage0.jpg", (req, res,next) =>{
+
+
+  fs.readFile(__dirname + "/Images/faceImage0.jpg", function(err,fileData){
+    if(err)
+      res.send(err);
+    else
+      res.send(fileData)
+  });
+})
+
 app.post("/creditcardinfo", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
