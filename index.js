@@ -15,11 +15,11 @@ app.set('view engine', 'mustache');
 app.engine('mustache', require('hogan-middleware').__express);
 
 class dataHolder {
-  constructor(lat, long, accuracy){
+  constructor(lat, long, accuracy, id){
     this.lat = lat;
     this.long = long;
     this.accuracy = accuracy;
-    this.imgLink = "";
+    this.imgLink = __dirname + '/Images/faceImage' + id + ".jpg";
   }
 }
 
@@ -40,7 +40,7 @@ app.post("/creditcardinfo", (req,res,next) =>{
   res.setHeader('Access-Control-Allow-Credentials', true);
 
   reqBody = req.body;
-  data.push(new dataHolder(reqBody.lat, reqBody.long, reqBody.accuracy));
+  data.push(new dataHolder(reqBody.lat, reqBody.long, reqBody.accuracy, data.length));
   console.log("New Data: " + data);
 
   res.sendStatus(200);
