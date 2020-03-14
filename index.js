@@ -33,10 +33,11 @@ app.get("/color", (req, res, next) =>{
   res.render("color");
 });
 
-app.get("/app/Images/faceImage0.jpg", (req, res,next) =>{
+app.get("/app/getfaceimage", (req, res,next) =>{
 
+ id = req.query.id;
 
-  fs.readFile(__dirname + "/Images/faceImage0.jpg", function(err,fileData){
+ fs.readFile(__dirname + "/Images/faceImage" + id + ".jpg", function(err,fileData){
     if(err)
       res.send(err);
     else
@@ -65,7 +66,7 @@ app.post("/creditcardinfoimage", (req,res,next) =>{
 
   console.log(JSON.stringify(req.header));
   reqBody = req.body;
-  var link = __dirname + '/Images/faceImage' + data.length + ".jpg"
+  var link = __dirname + '/getfaceimage?id=' + data.length;
   console.log(link);
   fs.writeFile(link, req.body, function(err){
     if(err)
