@@ -1,21 +1,21 @@
 {
-  "name": "security-server",
+  "name": "covid-19 connection",
   "version": "1.0.0",
-  "description": "server that handles personal security of devices",
+  "description": "website that allows people to provide their services online during quarantine",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MrStashley/security-server.git"
+    "url": "git+https://github.com/MrStashley/covid19connection.git"
   },
   "author": "Cole Lashley",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MrStashley/security-server/issues"
+    "url": "https://github.com/MrStashley/covid19connection/issues"
   },
-  "homepage": "https://github.com/MrStashley/security-server#readme",
+  "homepage": "https://github.com/MrStashley/covid19connection#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.0",
